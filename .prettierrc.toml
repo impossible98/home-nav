@@ -1,0 +1,19 @@
+[[overrides]]
+files = "*.json"
+
+[overrides.options]
+tabWidth = 4
+
+[[overrides]]
+files = "*.ts"
+
+[overrides.options]
+semi = true
+tabWidth = 2
+
+[[overrides]]
+files = "*.tsx"
+
+[overrides.options]
+semi = true
+tabWidth = 2
