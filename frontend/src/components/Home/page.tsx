@@ -1,9 +1,9 @@
 // import local modules
-import HomeSearch from "./search";
+import HomeMenu from "./menu";
 
 function HomePage() {
   // return
-  return <HomeSearch />;
+  return <HomeMenu />;
 }
 
 export default HomePage;
