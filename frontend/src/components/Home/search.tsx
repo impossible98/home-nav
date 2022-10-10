@@ -1,13 +1,11 @@
 // import third-party modules
-import { useState, useRef } from "react";
+import { useState } from "react";
 import { Button, Grid, Input, Tabs } from "@arco-design/web-react";
-import type { RefInputType } from "@arco-design/web-react/es/Input/interface";
 // import local modules
 import { BASE_SEARCH_URL } from "@/utils/constants";
 
 function HomeSearch() {
   const [activeTab, setActiveTab] = useState("1");
-  const inputEl = useRef<RefInputType>(null);
   // return
   return (
     <Grid.Row>
@@ -16,26 +14,34 @@ function HomeSearch() {
           <Tabs.TabPane key="1" title="cn Bing">
             <Input
               style={{
-                borderRadius: "0.375rem",
+                borderRadius: "9999px",
+                height: "40px",
               }}
-              ref={inputEl}
-              onPressEnter={() => {
-                if (inputEl.current && inputEl.current.dom.value) {
-                  window.open(`${BASE_SEARCH_URL}${inputEl.current.dom.value}`);
+              onPressEnter={(e) => {
+                if (e.target.value) {
+                  window.open(`${BASE_SEARCH_URL}${e.target.value}`);
                 }
               }}
             />
-            <Button
-              onClick={() => {
-                if (inputEl.current && inputEl.current.dom.value) {
-                  window.open(`${BASE_SEARCH_URL}${inputEl.current.dom.value}`);
-                }
-              }}
-            >
-              Search
-            </Button>
           </Tabs.TabPane>
         </Tabs>
+      </Grid.Col>
+      <Grid.Col span={24}>
+        <Button
+          style={{
+            borderRadius: "0.375rem",
+            left: "50%",
+            marginTop: "0.5rem",
+            transform: "translateX(-50%)",
+          }}
+          onClick={(e) => {
+            if (e.target.value) {
+              window.open(`${BASE_SEARCH_URL}${e.target.value}`);
+            }
+          }}
+        >
+          Search
+        </Button>
       </Grid.Col>
     </Grid.Row>
   );
