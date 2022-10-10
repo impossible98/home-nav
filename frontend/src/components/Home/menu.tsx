@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Layout, Menu, Button } from "@arco-design/web-react";
-import { MenuFold, MenuUnfold } from "@icon-park/react";
+import { Home, MenuFold, MenuUnfold } from "@icon-park/react";
 import HomeSearch from "./search";
 
 function HomeMenu() {
@@ -13,12 +13,12 @@ function HomeMenu() {
           height: "4rem",
         }}
       >
-        <Button onClick={() => setCollapse(!collapse)}>
-          {collapse ? (
-            <MenuFold theme="outline" />
-          ) : (
-            <MenuUnfold theme="outline" />
-          )}
+        <Button
+          onClick={() => {
+            setCollapse(!collapse);
+          }}
+        >
+          {collapse ? <MenuFold /> : <MenuUnfold />}
         </Button>
       </Layout.Header>
       <Layout>
@@ -32,7 +32,10 @@ function HomeMenu() {
             defaultOpenKeys={["1"]}
             defaultSelectedKeys={["1"]}
           >
-            <Menu.Item key="1">Home</Menu.Item>
+            <Menu.Item key="1">
+              <Home />
+              Home
+            </Menu.Item>
           </Menu>
         </Layout.Sider>
         <Layout>

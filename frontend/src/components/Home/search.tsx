@@ -34,11 +34,11 @@ function HomeSearch() {
             marginTop: "0.5rem",
             transform: "translateX(-50%)",
           }}
-          onClick={(e) => {
-            if (e.target.value) {
-              window.open(`${BASE_SEARCH_URL}${e.target.value}`);
-            }
-          }}
+          // onClick={(e) => {
+          //   if (e.target.value) {
+          //     window.open(`${BASE_SEARCH_URL}${e.target.value}`);
+          //   }
+          // }}
         >
           Search
         </Button>
